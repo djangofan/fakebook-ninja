@@ -17,6 +17,7 @@ export class MeasureComponent implements OnInit {
 
   @Input() cellChords: string;
   @Input() measureNumber: number;
+  @Input() fontColor: string;
 
   FONT_STYLE = 'Helvetica';
   SMALL = '14px ' + this.FONT_STYLE;
@@ -39,7 +40,9 @@ export class MeasureComponent implements OnInit {
   }
 
   drawCell(): void {
+    console.log('font color: ', this.fontColor);
     this.context = this.canvas.nativeElement.getContext('2d');
+    this.context.fillStyle = this.fontColor;
     const chordsArr = this.getChordsArray();
     if ( chordsArr.length === 4 ) {
       this.drawForwardDiagonal();
@@ -80,6 +83,7 @@ export class MeasureComponent implements OnInit {
 
   textCenter(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     const ypos = 60;
     if ( text.length <= 2) {
       this.context.fillText(text, 30, ypos);
@@ -96,6 +100,7 @@ export class MeasureComponent implements OnInit {
 
   textUpperLeft(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     const ypos = 32;
     if ( text.length <= 3) {
       this.context.fillText(text, 10, ypos);
@@ -106,6 +111,7 @@ export class MeasureComponent implements OnInit {
 
   textLowerRight( text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     if ( text.length <= 2) {
       this.context.fillText(text, 56, 86);
     } else if ( text.length <= 4 && text.length > 2 ) {
@@ -119,6 +125,7 @@ export class MeasureComponent implements OnInit {
 
   textLeft1(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
       this.context.fillText(text, 6, 52);
     } else {
@@ -128,6 +135,7 @@ export class MeasureComponent implements OnInit {
 
   textTop2(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
       this.context.fillText(text, 36, 10);
     } else {
@@ -137,6 +145,7 @@ export class MeasureComponent implements OnInit {
 
   textBottom3(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
       this.context.fillText(text, 36, 90);
     } else {
@@ -146,6 +155,7 @@ export class MeasureComponent implements OnInit {
 
   textRight4(text: string, font: string): void {
     this.context.font = font;
+    this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
       this.context.fillText(text, 72, 54);
     } else {
@@ -156,6 +166,7 @@ export class MeasureComponent implements OnInit {
   // 3 methods to draw lines in cell
 
   drawForwardDiagonal(): void {
+    this.context.strokeStyle = this.fontColor;
     this.context.beginPath();
     this.context.moveTo(2, 100);
     this.context.lineTo(96, 2);
@@ -163,6 +174,7 @@ export class MeasureComponent implements OnInit {
   }
 
   drawBottomRightSplit(): void {
+    this.context.strokeStyle = this.fontColor;
     this.context.beginPath();
     this.context.moveTo(50, 50);
     this.context.lineTo(100, 100);
@@ -170,6 +182,7 @@ export class MeasureComponent implements OnInit {
   }
 
   drawTopLeftSplit(): void {
+    this.context.strokeStyle = this.fontColor;
     this.context.beginPath();
     this.context.moveTo(50, 50);
     this.context.lineTo(0, 0);
