@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.x.
 
-This is a Jazz Fakebook generator app.
+This is the application `Django Fakebook Ninja`, for generating fakebook jazz charts.
 
 ## Development server
 
