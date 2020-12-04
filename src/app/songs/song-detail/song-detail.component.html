@@ -20,18 +20,18 @@
 <div class="row">
   <div class="col-md-12 chart" [style.background]="song.meta.background">
     <br/>
-    <h1 class="center" [style.color]="song.meta.fontcolor">{{ song.title }} ({{ song.key }})</h1>
-    <h3 class="list-group-item-heading center" [style.color]="song.meta.fontcolor">{{ song.composer }}</h3>
-    <h2 class="center" [style.color]="song.meta.fontcolor">{{ song.meta.form }}</h2>
+    <h1 class="center" [style.color]="song.meta.fontColor">{{ song.title }} ({{ song.key }})</h1>
+    <h3 class="list-group-item-heading center" [style.color]="song.meta.fontColor">{{ song.composer }}</h3>
+    <h2 class="center" [style.color]="song.meta.fontColor">{{ song.meta.form }}</h2>
     <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
       <div *ngFor="let measureChords of song.data;let tIndex=index;">
-        <mat-grid-tile [style.background]="song.meta.color">
-          <app-measure measureNumber="{{ tIndex +1 }}" cellChords="{{ measureChords }}" fontColor="{{song.meta.fontcolor}}"></app-measure>
+        <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor">
+          <app-measure measureNumber="{{ tIndex +1 }}" cellChords="{{ measureChords }}" fontColor="{{song.meta.fontColor}}" dividerColor="{{song.meta.dividerColor}}"></app-measure>
         </mat-grid-tile>
       </div>
     </mat-grid-list>
     <div class="col-md-12">
-      <h4 class="list-group-item-heading" [style.color]="song.meta.fontcolor">{{ song.meta.description }}</h4>
+      <h4 class="list-group-item-heading" [style.color]="song.meta.fontColor">{{ song.meta.description }}</h4>
     </div>
   </div>
   <div class="spacer">

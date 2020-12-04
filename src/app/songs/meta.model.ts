@@ -1,7 +1,15 @@
 
 export class Meta {
 
-  constructor(public description: string = '', public form: string = '', public color: string = 'lightgray', public background: string = 'white', public fontcolor: string = 'black') {
+  constructor(
+    public description: string = '',
+    public form: string = '',
+    public cellColor: string = 'lightgray',
+    public background: string = 'white',
+    public fontColor: string = 'black',
+    public borderColor: string = 'black',
+    public dividerColor: string = 'black',
+  ) {
 
   }
 

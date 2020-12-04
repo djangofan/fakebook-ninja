@@ -11,6 +11,10 @@ mat-grid-list {
   margin: 5px;
 }
 
+/* mat-grid-tile {
+  border: 2px solid black;
+} */
+
 .center {
   display: flex;
   justify-content: center;

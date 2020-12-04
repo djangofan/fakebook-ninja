@@ -18,6 +18,7 @@ export class MeasureComponent implements OnInit {
   @Input() cellChords: string;
   @Input() measureNumber: number;
   @Input() fontColor: string;
+  @Input() dividerColor: string;
 
   FONT_STYLE = 'Helvetica';
   SMALL = '14px ' + this.FONT_STYLE;
@@ -166,7 +167,7 @@ export class MeasureComponent implements OnInit {
   // 3 methods to draw lines in cell
 
   drawForwardDiagonal(): void {
-    this.context.strokeStyle = this.fontColor;
+    this.context.strokeStyle = this.dividerColor;
     this.context.beginPath();
     this.context.moveTo(2, 100);
     this.context.lineTo(96, 2);
@@ -174,7 +175,7 @@ export class MeasureComponent implements OnInit {
   }
 
   drawBottomRightSplit(): void {
-    this.context.strokeStyle = this.fontColor;
+    this.context.strokeStyle = this.dividerColor;
     this.context.beginPath();
     this.context.moveTo(50, 50);
     this.context.lineTo(100, 100);
@@ -182,7 +183,7 @@ export class MeasureComponent implements OnInit {
   }
 
   drawTopLeftSplit(): void {
-    this.context.strokeStyle = this.fontColor;
+    this.context.strokeStyle = this.dividerColor;
     this.context.beginPath();
     this.context.moveTo(50, 50);
     this.context.lineTo(0, 0);
