@@ -21,6 +21,7 @@ export class MeasureComponent implements OnInit {
   @Input() dividerColor: string;
 
   FONT_STYLE = 'Helvetica';
+  XSMALL = '12px ' + this.FONT_STYLE;
   SMALL = '14px ' + this.FONT_STYLE;
   MEDIUM = '20px ' + this.FONT_STYLE;
   LARGE = '24px ' + this.FONT_STYLE;
@@ -78,6 +79,8 @@ export class MeasureComponent implements OnInit {
     } else {
       this.textCenter('%', this.LARGE);
     }
+
+    this.drawCodaOne(this.XSMALL);
   }
 
   // 1 method for no cell split
@@ -85,9 +88,9 @@ export class MeasureComponent implements OnInit {
   textCenter(text: string, font: string): void {
     this.context.font = font;
     this.context.fillStyle = this.fontColor;
-    const ypos = 60;
+    const ypos = 58;
     if ( text.length <= 2) {
-      this.context.fillText(text, 30, ypos);
+      this.context.fillText(text, 38, ypos);
     } else if ( text.length <= 4 && text.length > 2 ) {
       this.context.fillText(text, 24, ypos);
     } else if ( text.length <= 6 && text.length > 4 ) {
@@ -102,11 +105,12 @@ export class MeasureComponent implements OnInit {
   textUpperLeft(text: string, font: string): void {
     this.context.font = font;
     this.context.fillStyle = this.fontColor;
-    const ypos = 32;
-    if ( text.length <= 3) {
-      this.context.fillText(text, 10, ypos);
+    if ( text.length <= 2) {
+      this.context.fillText(text, 14, 30);
+    } else if ( text.length > 2 && text.length <= 5 ) {
+      this.context.fillText(text, 10, 28);
     } else {
-      this.context.fillText(text, 6, ypos);
+      this.context.fillText(text, 4, 22);
     }
   }
 
@@ -116,9 +120,9 @@ export class MeasureComponent implements OnInit {
     if ( text.length <= 2) {
       this.context.fillText(text, 56, 86);
     } else if ( text.length <= 4 && text.length > 2 ) {
-      this.context.fillText(text, 50, 86);
+      this.context.fillText(text, 46, 86);
     } else {
-      this.context.fillText(text, 36, 86);
+      this.context.fillText(text, 36, 90);
     }
   }
 
@@ -158,9 +162,12 @@ export class MeasureComponent implements OnInit {
     this.context.font = font;
     this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
+      this.context.fillText(text, 68, 54);
+    } else if ( text.length > 3 && text.length < 6 ) {
       this.context.fillText(text, 72, 54);
     } else {
-      this.context.fillText(text, 54, 54);
+      this.context.font = this.XSMALL;
+      this.context.fillText(text, 56, 54);
     }
   }
 
@@ -188,6 +195,36 @@ export class MeasureComponent implements OnInit {
     this.context.moveTo(50, 50);
     this.context.lineTo(0, 0);
     this.context.stroke();
+  }
+
+  // 2 methods to draw coda
+
+  drawCodaOne(font: string): void {
+    this.context.strokeStyle = this.dividerColor;
+    this.context.beginPath();
+    this.context.moveTo(6, 6);
+    this.context.lineTo(6, 25);
+    this.context.stroke();
+    this.context.moveTo(6, 6);
+    this.context.lineTo(44, 6);
+    this.context.stroke();
+    this.context.font = font;
+    this.context.fillStyle = this.fontColor;
+    this.context.fillText('1.', 12, 20);
+  }
+
+  drawCodaTwo(font: string): void {
+    this.context.strokeStyle = this.dividerColor;
+    this.context.beginPath();
+    this.context.moveTo(6, 6);
+    this.context.lineTo(6, 25);
+    this.context.stroke();
+    this.context.moveTo(6, 6);
+    this.context.lineTo(44, 6);
+    this.context.stroke();
+    this.context.font = font;
+    this.context.fillStyle = this.fontColor;
+    this.context.fillText('2.', 12, 20);
   }
 
 }
