@@ -60,7 +60,7 @@ export class SongEditComponent implements OnInit, OnDestroy {
     if (this.editMode) {
       this.song = this.songsService.getSong(this.id);
     } else {
-      const newMeta = new Meta('None', 'AABA', 'lightblue', 'white', 'black', 'black');
+      const newMeta = new Meta('None', 'AABA', 'lightblue', 'white', 'black', 'black', 'black', 0, 0, 100);
       const newData = [['x'],['x'],['x'],['x'],['x'],['x'],['x'],['x']];
       this.song = new Song(currentUser, 'new song', 'new composer', 'key', newData, newMeta);
     }

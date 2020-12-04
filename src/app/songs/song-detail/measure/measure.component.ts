@@ -19,12 +19,15 @@ export class MeasureComponent implements OnInit {
   @Input() measureNumber: number;
   @Input() fontColor: string;
   @Input() dividerColor: string;
+  @Input() codaOne: number;
+  @Input() codaTwo: number;
 
   FONT_STYLE = 'Helvetica';
   XSMALL = '12px ' + this.FONT_STYLE;
   SMALL = '14px ' + this.FONT_STYLE;
   MEDIUM = '20px ' + this.FONT_STYLE;
   LARGE = '24px ' + this.FONT_STYLE;
+  LARGER = '28px ' + this.FONT_STYLE;
 
   constructor() { }
 
@@ -77,10 +80,14 @@ export class MeasureComponent implements OnInit {
     } else if ( chordsArr.length === 1 ) {
       this.textCenter(chordsArr[0], this.LARGE);
     } else {
-      this.textCenter('%', this.LARGE);
+      this.textCenter('%', this.LARGER);
     }
-
-    this.drawCodaOne(this.XSMALL);
+    if ( this.measureNumber === this.codaOne ) {
+      this.drawCodaOne(this.SMALL);
+    }
+    if ( this.measureNumber === this.codaTwo ) {
+      this.drawCodaTwo(this.SMALL);
+    }
   }
 
   // 1 method for no cell split
@@ -201,11 +208,12 @@ export class MeasureComponent implements OnInit {
 
   drawCodaOne(font: string): void {
     this.context.strokeStyle = this.dividerColor;
+    this.context.lineWidth = 3;
     this.context.beginPath();
     this.context.moveTo(6, 6);
     this.context.lineTo(6, 25);
     this.context.stroke();
-    this.context.moveTo(6, 6);
+    this.context.moveTo(4, 6);
     this.context.lineTo(44, 6);
     this.context.stroke();
     this.context.font = font;
@@ -215,11 +223,12 @@ export class MeasureComponent implements OnInit {
 
   drawCodaTwo(font: string): void {
     this.context.strokeStyle = this.dividerColor;
+    this.context.lineWidth = 3;
     this.context.beginPath();
     this.context.moveTo(6, 6);
     this.context.lineTo(6, 25);
     this.context.stroke();
-    this.context.moveTo(6, 6);
+    this.context.moveTo(4, 6);
     this.context.lineTo(44, 6);
     this.context.stroke();
     this.context.font = font;

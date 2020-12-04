@@ -23,11 +23,40 @@
     <h1 class="center" [style.color]="song.meta.fontColor">{{ song.title }} ({{ song.key }})</h1>
     <h3 class="list-group-item-heading center" [style.color]="song.meta.fontColor">{{ song.composer }}</h3>
     <h2 class="center" [style.color]="song.meta.fontColor">{{ song.meta.form }}</h2>
+    <p *ngIf="song.data.length >= song.meta.bSplit">A</p>
     <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
       <div *ngFor="let measureChords of song.data;let tIndex=index;">
-        <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor">
-          <app-measure measureNumber="{{ tIndex +1 }}" cellChords="{{ measureChords }}" fontColor="{{song.meta.fontColor}}" dividerColor="{{song.meta.dividerColor}}"></app-measure>
-        </mat-grid-tile>
+        <div *ngIf="tIndex+1 < song.meta.bSplit">
+          <mat-grid-tile [style.background]="song.meta.background" *ngIf="!measureChords"></mat-grid-tile>
+          <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor" *ngIf="measureChords">
+            <app-measure
+              measureNumber="{{ tIndex +1 }}"
+              cellChords="{{ measureChords }}"
+              fontColor="{{song.meta.fontColor}}"
+              dividerColor="{{song.meta.dividerColor}}"
+              codaOne="{{song.meta.codaOne}}"
+              codaTwo="{{song.meta.codaTwo}}"
+            ></app-measure>
+          </mat-grid-tile>
+        </div>
+      </div>
+    </mat-grid-list>
+    <p *ngIf="song.data.length >= song.meta.bSplit">B</p>
+    <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
+      <div *ngFor="let measureChords of song.data;let tIndex=index;">
+        <div *ngIf="song.meta.bSplit != 0 && tIndex+1 >= song.meta.bSplit">
+          <mat-grid-tile [style.background]="song.meta.background" *ngIf="!measureChords"></mat-grid-tile>
+          <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor" *ngIf="measureChords">
+            <app-measure
+              measureNumber="{{ tIndex +1 }}"
+              cellChords="{{ measureChords }}"
+              fontColor="{{song.meta.fontColor}}"
+              dividerColor="{{song.meta.dividerColor}}"
+              codaOne="{{song.meta.codaOne}}"
+              codaTwo="{{song.meta.codaTwo}}"
+            ></app-measure>
+          </mat-grid-tile>
+        </div>
       </div>
     </mat-grid-list>
     <div class="col-md-12">
