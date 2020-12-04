@@ -1,0 +1,31 @@
+
+button {
+  margin-top: 10px;
+}
+
+div.row {
+  margin-top: 10px;
+}
+
+mat-grid-list {
+  margin: 5px;
+}
+
+#canvas {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+h1 { font-size: 44px; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; }
+h4 { font-size: 14px; }
+
+.chart {
+  background-color: lightslategray;
+}

@@ -1,0 +1,48 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Manage Song <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer;" (click)="onEditSong()">Edit Song</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteSong()">Delete Song</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 chart">
+    <br/>
+    <h1 class="center">{{ song.title }} ({{ song.key }})</h1>
+    <h3 class="list-group-item-heading center">{{ song.composer }}</h3>
+    <h2 class="center">{{ song.meta.form }}</h2>
+    <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
+      <div *ngFor="let measureChords of song.data;let tIndex=index;">
+        <mat-grid-tile [style.background]="song.meta.color">
+          <app-measure measureNumber="{{ tIndex +1 }}" cellChords="{{ measureChords }}"></app-measure>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+    <div class="col-md-12">
+      <h4 class="list-group-item-heading">{{ song.meta.description }}</h4>
+    </div>
+  </div>
+  <div>
+    <br/>
+    <p>Data</p>
+    <pre>{{ getData() | json }}</pre>
+  </div>
+  <div>
+    <br/>
+    <p>Meta</p>
+    <pre>{{ getMeta() | json }}</pre>
+  </div>
+</div>
+
