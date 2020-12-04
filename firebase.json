@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/angular-song-db",
+    "public": "dist/fakebook-ninja",
     "ignore": [
       "firebase.json",
       "**/.*",

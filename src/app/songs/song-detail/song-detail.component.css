@@ -28,4 +28,10 @@ h4 { font-size: 14px; }
 
 .chart {
   background-color: lightslategray;
+  margin-bottom: 2em;
+}
+
+div.spacer {
+  margin-bottom: 2em;
+  width:50%;
 }

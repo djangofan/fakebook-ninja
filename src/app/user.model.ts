@@ -1,6 +1,6 @@
 
 /**
- * Extended by Auth and Data classes.
+ * Extended by Auth.  Cast to this object to remove the token and expiration data info.
  */
 export class User {
 
