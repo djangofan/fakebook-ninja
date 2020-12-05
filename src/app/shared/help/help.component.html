@@ -6,15 +6,25 @@
 <p>Click the <span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">New Song</span> button create a new song. Remember to use the Manage menu to fetch your existing songs first, or else you might lose your work.&nbsp; &nbsp;The editor will only allow you to edit songs that you own.</p>
 <p>When editing a new song, there will be some default values.</p>
 <p>Every song has <strong>data</strong> and <strong>meta</strong> .</p>
+<h4>Data</h4>
 <p>Here is what <strong>data</strong> might look like:</p>
 <pre>[
   ["C6"],["C6"],["C6"],["Gm7","C7"],["F7"],["F7"],["C6"],["C/E","Eb&deg;"],
   ["Dm7"],["G7"],["C/E","Eb&deg;"],["D-7","G7"]]
 </pre>
+<h4>Meta</h4>
 <p>Here is what <strong>meta</strong> might look like. It is your responsibility to experiment with these values to get your chart to look like you want it to.</p>
 <pre>
   {{ data | json }}
 </pre>
+<div>
+  <p>Meta includes information on how to stucture your chart.</p>
+  <ul>
+    <li>bSplit and cSplit: mark where the form splits into a B and/or C part.  A really large number, like 100, will basically disable it.</li>
+    <li>background, cellColor, fontColor, dividerColor, and borderColor: control the colors</li>
+    <li>codaOne and codaTwo: defines which grid number to put a code marker on</li>
+  </ul>
+</div>
 <br/>
 <p>After editing your song, always use the <strong>Manage</strong> menu to store your work and then double check it to be sure it saved.</p>
 <p>Some chord symbols you might need can be copied from here: ♭  ø7  o  °  M11 Δ     </p>
