@@ -45,7 +45,6 @@ export class MeasureComponent implements OnInit {
   }
 
   drawCell(): void {
-    console.log('font color: ', this.fontColor);
     this.context = this.canvas.nativeElement.getContext('2d');
     this.context.fillStyle = this.fontColor;
     const chordsArr = this.getChordsArray();
@@ -82,10 +81,10 @@ export class MeasureComponent implements OnInit {
     } else {
       this.textCenter('%', this.LARGER);
     }
-    if ( this.measureNumber === this.codaOne ) {
+    if ( this.measureNumber == this.codaOne ) {
       this.drawCodaOne(this.SMALL);
     }
-    if ( this.measureNumber === this.codaTwo ) {
+    if ( this.measureNumber == this.codaTwo ) {
       this.drawCodaTwo(this.SMALL);
     }
   }

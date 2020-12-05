@@ -11,7 +11,8 @@ export class Meta {
     public dividerColor: string = 'black',
     public codaOne: number = 0,
     public codaTwo: number = 0,
-    public bSplit: number = 0
+    public bSplit: number = 0,
+    public cSplit: number = 0
   ) {
 
   }
