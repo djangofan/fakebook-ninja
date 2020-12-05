@@ -1,0 +1,4 @@
+User-agent: Mediapartners-Google
+Disallow: /songs
+Disallow: /help
+Allow: /songs/*/public
