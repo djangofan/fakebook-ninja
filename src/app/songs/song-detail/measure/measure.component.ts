@@ -148,9 +148,9 @@ export class MeasureComponent implements OnInit {
     this.context.font = font;
     this.context.fillStyle = this.fontColor;
     if ( text.length <= 3) {
-      this.context.fillText(text, 36, 10);
+      this.context.fillText(text, 36, 22);
     } else {
-      this.context.fillText(text, 16, 10);
+      this.context.fillText(text, 16, 22);
     }
   }
 
@@ -182,8 +182,8 @@ export class MeasureComponent implements OnInit {
   drawForwardDiagonal(): void {
     this.context.strokeStyle = this.dividerColor;
     this.context.beginPath();
-    this.context.moveTo(2, 100);
-    this.context.lineTo(96, 2);
+    this.context.moveTo(100, 0);
+    this.context.lineTo(0, 100);
     this.context.stroke();
   }
 
