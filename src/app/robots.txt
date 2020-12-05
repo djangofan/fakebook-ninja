@@ -1,4 +1,5 @@
 User-agent: Mediapartners-Google
-Disallow: /songs
-Disallow: /help
+Disallow: /
+Allow: /help
+Allow: /auth
 Allow: /songs/*/public
