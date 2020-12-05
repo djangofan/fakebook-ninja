@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /
+Disallow: /songs
+Disallow: /songs/*
 Allow: index.html
 Allow: /help
 Allow: /auth
