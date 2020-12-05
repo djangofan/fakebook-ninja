@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MeasureComponent } from './song-detail/measure/measure.component';
 import { DemoMaterialModule } from './material-module';
 import { ChordsPipe } from './chords.pipe';
+import { SongPublicComponent } from './song-public/song-public.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChordsPipe } from './chords.pipe';
     SongEditComponent,
     MeasureComponent,
     ChordsPipe,
+    SongPublicComponent,
   ],
   imports: [
     RouterModule,
