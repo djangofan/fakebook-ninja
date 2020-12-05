@@ -1,0 +1,79 @@
+
+
+<div class="row">
+  <div class="col-md-12 chart" [style.background]="song.meta.background">
+    <br/>
+    <h1 class="center" [style.color]="song.meta.fontColor">{{ song.title }} ({{ song.key }})</h1>
+    <h3 class="list-group-item-heading center" [style.color]="song.meta.fontColor">{{ song.composer }}</h3>
+    <h2 class="center" [style.color]="song.meta.fontColor">{{ song.meta.form }}</h2>
+
+    <div id="apart">
+      <p *ngIf="song.data.length >= song.meta.bSplit">A</p>
+      <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
+        <div *ngFor="let measureChords of song.data;let tIndex=index;">
+          <div *ngIf="tIndex+1 < song.meta.bSplit">
+            <mat-grid-tile [style.background]="song.meta.background" *ngIf="!measureChords"></mat-grid-tile>
+            <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor" *ngIf="measureChords">
+              <app-measure
+                measureNumber="{{ tIndex +1 }}"
+                cellChords="{{ measureChords }}"
+                fontColor="{{ song.meta.fontColor }}"
+                dividerColor="{{ song.meta.dividerColor }}"
+                codaOne="{{ song.meta.codaOne }}"
+                codaTwo="{{ song.meta.codaTwo }}"
+              ></app-measure>
+            </mat-grid-tile>
+          </div>
+        </div>
+      </mat-grid-list>
+    </div>
+
+    <div id="bpart" *ngIf="song.meta.bSplit && song.data.length >= song.meta.bSplit">
+      <p>B</p>
+      <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
+        <div *ngFor="let measureChords of song.data;let tIndex=index;">
+          <div *ngIf="song.meta.bSplit != 0 && (tIndex+1 >= song.meta.bSplit && tIndex+1 < song.meta.cSplit)">
+            <mat-grid-tile [style.background]="song.meta.background" *ngIf="!measureChords"></mat-grid-tile>
+            <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor" *ngIf="measureChords">
+              <app-measure
+                measureNumber="{{ tIndex +1 }}"
+                cellChords="{{ measureChords }}"
+                fontColor="{{ song.meta.fontColor }}"
+                dividerColor="{{ song.meta.dividerColor }}"
+                codaOne="{{ song.meta.codaOne }}"
+                codaTwo="{{ song.meta.codaTwo }}"
+              ></app-measure>
+            </mat-grid-tile>
+          </div>
+        </div>
+      </mat-grid-list>
+    </div>
+
+    <div id="cpart" *ngIf="song.meta.cSplit && song.data.length >= song.meta.cSplit">
+      <p>C</p>
+      <mat-grid-list cols="8" columnWidth="100px" rowHeight="100px" gutterSize="5px">
+        <div *ngFor="let measureChords of song.data;let tIndex=index;">
+          <div *ngIf="song.meta.cSplit != 0 && tIndex+1 >= song.meta.cSplit">
+            <mat-grid-tile [style.background]="song.meta.background" *ngIf="!measureChords"></mat-grid-tile>
+            <mat-grid-tile [style.background]="song.meta.cellColor" [style.border]="song.meta.borderColor" *ngIf="measureChords">
+              <app-measure
+                measureNumber="{{ tIndex +1 }}"
+                cellChords="{{ measureChords }}"
+                fontColor="{{ song.meta.fontColor }}"
+                dividerColor="{{ song.meta.dividerColor }}"
+                codaOne="{{ song.meta.codaOne }}"
+                codaTwo="{{ song.meta.codaTwo }}"
+              ></app-measure>
+            </mat-grid-tile>
+          </div>
+        </div>
+      </mat-grid-list>
+    </div>
+
+    <div class="col-md-12">
+      <h4 class="list-group-item-heading" [style.color]="song.meta.fontColor">{{ song.meta.description }}</h4>
+    </div>
+  </div>
+
+</div>
+

@@ -1,3 +1,4 @@
+import { SongPublicComponent } from './song-public/song-public.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,6 +11,11 @@ import { SongDetailComponent } from './song-detail/song-detail.component';
 import { SongResolverService } from './song-resolver.service';
 
 const routes: Routes = [
+  {
+    path: 'songs/:id/public',
+    component: SongPublicComponent,
+    resolve: [SongResolverService]
+  },
   {
     path: 'songs',
     component: SongsComponent,
