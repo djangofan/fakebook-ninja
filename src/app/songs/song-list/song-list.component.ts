@@ -23,7 +23,7 @@ import { SongsService } from '../songs.service';
       </div>
     </div>
   `,
-  styles: []
+  styleUrls: ['song-list.component.css']
 })
 export class SongListComponent implements OnInit, OnDestroy {
 
