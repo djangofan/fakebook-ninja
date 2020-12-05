@@ -13,7 +13,7 @@ export interface Branch {
 @Injectable()
 export class SongsService {
 
-  LOCAL_STORAGE_KEY = 'userData';
+  LOCAL_STORAGE_KEY = 'songData';
   songsChanged = new Subject<Song[]>();
   private songs: Song[] = [];
 

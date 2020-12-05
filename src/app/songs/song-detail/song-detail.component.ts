@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Meta } from '../meta.model';
 import { Song } from '../song.model';
 import { SongsService } from '../songs.service';
@@ -16,7 +17,8 @@ export class SongDetailComponent implements OnInit {
 
   constructor(private songsService: SongsService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -44,6 +46,10 @@ export class SongDetailComponent implements OnInit {
 
   getMeta(): Meta {
     return this.song.meta;
+  }
+
+  getCurrentUser(): string {
+    return localStorage.getItem('currentUser') ? localStorage.getItem('currentUser') : null;
   }
 
 }

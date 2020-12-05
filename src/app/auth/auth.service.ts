@@ -114,7 +114,8 @@ export class AuthService {
     this.user.next(null);
     this.router.navigate(['/auth']);
     localStorage.removeItem('authData');
-    localStorage.removeItem('userData'); // cached object containging Song[]
+    localStorage.removeItem('songData');
+    localStorage.removeItem('currentUser');
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
     }
@@ -138,6 +139,7 @@ export class AuthService {
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('authData', JSON.stringify(user));
+    localStorage.setItem('currentUser', email);
   }
 
   private handleError(errorRes: HttpErrorResponse) {

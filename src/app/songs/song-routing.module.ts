@@ -9,8 +9,13 @@ import { SongStartComponent } from './song-start/song-start.component';
 import { SongEditComponent } from './song-edit/song-edit.component';
 import { SongDetailComponent } from './song-detail/song-detail.component';
 import { SongResolverService } from './song-resolver.service';
+import { HelpComponent } from '../shared/help/help.component';
 
 const routes: Routes = [
+  {
+    path: 'help',
+    component: HelpComponent
+  },
   {
     path: 'songs/:id/public',
     component: SongPublicComponent,

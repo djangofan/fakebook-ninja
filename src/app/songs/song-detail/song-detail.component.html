@@ -6,7 +6,9 @@
       appDropdown>
       <button
         type="button"
-        class="btn btn-primary dropdown-toggle">
+        class="btn btn-primary dropdown-toggle"
+        [attr.disabled]="song.owner != getCurrentUser() ? true : null"
+      >
         Manage Song <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
@@ -90,6 +92,10 @@
     <div class="col-md-12">
       <h4 class="list-group-item-heading" [style.color]="song.meta.fontColor">{{ song.meta.description }}</h4>
     </div>
+  </div>
+  <div class="spacer">
+    <p>Owner</p>
+    <pre>{{ song.owner }}</pre>
   </div>
   <div class="spacer">
     <p>Data</p>

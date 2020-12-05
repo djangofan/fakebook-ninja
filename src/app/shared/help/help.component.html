@@ -1,0 +1,23 @@
+<h1 style="color: #5e9ca0;">Thanks for using Fakebook Ninja!</h1>
+<h2 style="color: #2e6c80;">How to login:</h2>
+<p>Logging in is easy.&nbsp; On the /auth page, just click the <span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">Switch To Signup</span>&nbsp; button and enter your email and the password you want to use.&nbsp; &nbsp;It can be any email address you want, even a fake one.&nbsp; &nbsp;The songs you create in this app will be owned by that email address.</p>
+<p>After signing up, you will be automatically logged in.</p>
+<h2 style="color: #2e6c80;">How to use the editor:</h2>
+<p>Click the <span style="background-color: #2b2301; color: #fff; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;">New Song</span> button create a new song. Remember to use the Manage menu to fetch your existing songs first, or else you might lose your work.&nbsp; &nbsp;The editor will only allow you to edit songs that you own.</p>
+<p>When editing a new song, there will be some default values.</p>
+<p>Every song has <strong>data</strong> and <strong>meta</strong> .</p>
+<p>Here is what data might look like:</p>
+<pre>[
+  ["C6"],["C6"],["C6"],["Gm7","C7"],["F7"],["F7"],["C6"],["C/E","Eb&deg;"],
+  ["Dm7"],["G7"],["C/E","Eb&deg;"],["D-7","G7"]]
+</pre>
+<p>Here is what <strong>meta</strong> might look like. It is your responsibility to experiment with these values to get your chart to look like you want it to.</p>
+<pre>
+  {{ data | json }}
+</pre>
+<br/>
+<p>After editing your song, always use the <strong>Manage</strong> menu to store your work and then double check it to be sure it saved.</p>
+<h2 style="color: #2e6c80;">Share songs with others:</h2>
+<p>Users who are not logged in can see charts if you send them a link to the chart.</p>
+<p>The public link to charts looks like this, with <strong>/public</strong> on the end of it: <a href="http://localhost:4200/songs/2/public">http://localhost:4200/songs/2/public</a></p>
+<p><strong>Save this link into your bookmarks and share it with your friends. It is all FREE! </strong><br /><strong>Enjoy!</strong></p>
