@@ -1,22 +1,24 @@
+import { Meta } from './../../songs/meta.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Meta } from '../meta.model';
-import { Song } from '../song.model';
-import { SongsService } from '../songs.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Song } from 'src/app/songs/song.model';
+import { SongsService } from 'src/app/songs/songs.service';
 
 @Component({
-  selector: 'app-song-public',
-  templateUrl: './song-public.component.html',
-  styleUrls: ['./song-public.component.css']
+  selector: 'app-song-detail',
+  templateUrl: './song-detail.component.html',
+  styleUrls: ['./song-detail.component.css']
 })
-export class SongPublicComponent implements OnInit {
+export class SongDetailComponent implements OnInit {
 
   song: Song;
   id: number;
 
   constructor(private songsService: SongsService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -44,6 +46,10 @@ export class SongPublicComponent implements OnInit {
 
   getMeta(): Meta {
     return this.song.meta;
+  }
+
+  getCurrentUser(): string {
+    return localStorage.getItem('currentUser') ? localStorage.getItem('currentUser') : null;
   }
 
 }

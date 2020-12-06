@@ -40,5 +40,5 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSidenavModule
   ]
 })
-export class DemoMaterialModule {}
+export class AllMaterialModule {}
 

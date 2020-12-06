@@ -6,6 +6,9 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a routerLink="/public">Public</a>
+        </li>
         <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/songs">Songs</a>
         </li>

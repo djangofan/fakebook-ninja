@@ -5,6 +5,4 @@ Disallow: /songs/*
 Allow: index.html
 Allow: /help
 Allow: /auth
-Allow: /songs/*/public
-
-Sitemap: https://django.fakebook.ninja/sitemap.txt
+Allow: /public

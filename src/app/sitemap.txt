@@ -1,9 +1,0 @@
-https://django.fakebook.ninja/songs/0/public
-https://django.fakebook.ninja/songs/1/public
-https://django.fakebook.ninja/songs/2/public
-https://django.fakebook.ninja/songs/3/public
-https://django.fakebook.ninja/songs/4/public
-https://django.fakebook.ninja/songs/5/public
-https://django.fakebook.ninja/songs/6/public
-https://django.fakebook.ninja/songs/7/public
-

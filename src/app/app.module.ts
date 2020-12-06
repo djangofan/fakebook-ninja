@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthComponent } from './auth/auth.component';
 import { SongsModule } from './songs/song.module';
+import { PublicModule } from './public/public.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AppRoutingModule,
     SongsModule,
+    PublicModule,
     SharedModule,
     CoreModule,
     BrowserAnimationsModule

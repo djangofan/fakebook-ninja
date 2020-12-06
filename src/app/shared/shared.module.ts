@@ -6,6 +6,8 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
 import { PlaceholderDirective } from './placeholder/placeholder.directive';
 import { DropdownDirective } from './dropdown.directive';
 import { HelpComponent } from './help/help.component';
+import { SortAscendingPipe } from './sort-ascending.pipe';
+import { AllMaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
@@ -13,15 +15,21 @@ import { HelpComponent } from './help/help.component';
     LoadingSpinnerComponent,
     PlaceholderDirective,
     DropdownDirective,
-    HelpComponent
+    HelpComponent,
+    SortAscendingPipe
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    AllMaterialModule
+  ],
   exports: [
     AlertComponent,
     LoadingSpinnerComponent,
     PlaceholderDirective,
     DropdownDirective,
-    CommonModule
+    CommonModule,
+    SortAscendingPipe,
+    AllMaterialModule
   ],
   entryComponents: [AlertComponent]
 })

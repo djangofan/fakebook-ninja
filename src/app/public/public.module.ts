@@ -1,33 +1,31 @@
+import { PublicSongItemComponent } from './public-song-list/public-song-item/public-song-item.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { SongsComponent } from './songs.component';
-import { SongListComponent } from './song-list/song-list.component';
+import { PublicComponent } from './public.component';
 import { SongDetailComponent } from './song-detail/song-detail.component';
-import { SongItemComponent } from './song-list/song-item/song-item.component';
 import { SongStartComponent } from './song-start/song-start.component';
-import { SongEditComponent } from './song-edit/song-edit.component';
-import { SongRoutingModule } from './song-routing.module';
+import { PublicRoutingModule } from './public-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { MeasureComponent } from './song-detail/measure/measure.component';
+import { PublicSongListComponent } from './public-song-list/public-song-list.component';
 
 @NgModule({
   declarations: [
-    SongsComponent,
-    SongListComponent,
+    PublicComponent,
+    PublicSongListComponent,
+    PublicSongItemComponent,
     SongDetailComponent,
-    SongItemComponent,
     SongStartComponent,
-    SongEditComponent,
     MeasureComponent
   ],
   imports: [
     RouterModule,
     ReactiveFormsModule,
-    SongRoutingModule,
+    PublicRoutingModule,
     SharedModule
   ]
 })
-export class SongsModule {}
+export class PublicModule {}

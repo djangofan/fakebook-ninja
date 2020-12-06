@@ -1,5 +1,5 @@
+import { Song } from './../songs/song.model';
 import { Pipe, PipeTransform } from '@angular/core';
-import { Song } from './song.model';
 
 @Pipe({
   name: 'sortAscending',
@@ -8,7 +8,6 @@ import { Song } from './song.model';
 export class SortAscendingPipe implements PipeTransform {
 
   transform(value: Song[]): Song[] {
-    console.log('Sort ascending');
     return value.sort((a, b) => this.compare(a, b));
   }
 
