@@ -62,7 +62,7 @@ export class SongEditComponent implements OnInit, OnDestroy {
     } else {
       const newMeta = new Meta('None', 'AABA', 'lightblue', 'white', 'black', 'black', 'black', 0, 0, 100, 100);
       const newData = [['x'],['x'],['x'],['x'],['x'],['x'],['x'],['x']];
-      this.song = new Song(currentUser, 'new song', 'new composer', 'key', newData, newMeta);
+      this.song = new Song(currentUser, 'new song', 'new composer', 'key', newData, newMeta, true);
     }
 
     this.songForm = new FormGroup({
@@ -72,6 +72,7 @@ export class SongEditComponent implements OnInit, OnDestroy {
       key: new FormControl(this.song.key, Validators.required),
       data: new FormControl(JSON.stringify(this.song.data), Validators.required),
       meta: new FormControl(JSON.stringify(this.song.meta), Validators.required),
+      published: new FormControl(JSON.stringify(this.song.published), Validators.required)
     });
   }
 

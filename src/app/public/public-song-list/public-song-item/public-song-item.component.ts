@@ -8,7 +8,9 @@ import { Song } from 'src/app/songs/song.model';
       style="cursor: pointer;"
       [routerLink]="[index]"
       routerLinkActive="active"
-      class="list-group-item clearfix">
+      class="list-group-item clearfix"
+      *ngIf="song.published ? true : false"
+    >
       <div class="pull-left">
       <h4 class="list-group-item-heading">{{ song.title }} ({{ song.key }})</h4>
       <h5 class="list-group-item-heading">{{ song.composer }}</h5>

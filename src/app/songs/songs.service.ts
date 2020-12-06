@@ -27,7 +27,7 @@ export class SongsService {
 
   getSongs() {
     if (this.songs) {
-      return this.songs.slice();
+      return this.sortSongs(this.songs);
     } else {
       this.updateSongsFromLocalStorage();
       return this.songs;
@@ -41,7 +41,7 @@ export class SongsService {
   addSong(newSong: FormGroup) {
     const song = this.convertFormToSong(newSong.value);
     this.songs.push(song);
-    this.songsChanged.next(this.songs.slice());
+    this.songsChanged.next(this.sortSongs(this.songs));
     this.saveSongsToLocalStorage(this.songs);
     console.log('Added song.', song);
   }
@@ -49,7 +49,7 @@ export class SongsService {
   updateSong(index: number, newSong: FormGroup) {
     const song = this.convertFormToSong(newSong.value);
     this.songs[index] = song;
-    const copyOfSongs = this.songs.slice();
+    const copyOfSongs = this.sortSongs(this.songs);
     this.songsChanged.next(copyOfSongs);
     this.saveSongsToLocalStorage(copyOfSongs);
     console.log('Updated song.', song);
@@ -61,7 +61,7 @@ export class SongsService {
 
   deleteSong(index: number) {
     this.songs.splice(index, 1);
-    this.songsChanged.next(this.songs.slice());
+    this.songsChanged.next(this.sortSongs(this.songs));
     this.saveSongsToLocalStorage(this.songs);
   }
 
@@ -74,10 +74,32 @@ export class SongsService {
   updateSongsFromLocalStorage() {
     const cachedSongs = localStorage.getItem(this.LOCAL_STORAGE_KEY);
     if (cachedSongs && cachedSongs.length > 0) {
-      this.songs = JSON.parse(cachedSongs);
+      this.songs = this.sortSongs(JSON.parse(cachedSongs));
     } else {
       console.log('You song list in local storage was empty.');
     }
+  }
+
+  sortSongs(songs: Song[]) {
+    return songs.slice().sort((a, b) => this.compare(a, b));
+  }
+
+  compare( a: Song, b: Song ) {
+    if ( a.title.toLowerCase() < b.title.toLowerCase() ) {
+      return -1;
+    }
+    if ( a.title.toLowerCase() > b.title.toLowerCase()  ) {
+      return 1;
+    }
+    if ( a.title.toLowerCase() === b.title.toLowerCase() ) {
+      if ( a.key.toLowerCase() < b.key.toLowerCase() ) {
+        return -1;
+      }
+      if ( a.key.toLowerCase() > b.key.toLowerCase()  ) {
+        return 1;
+      }
+    }
+    return 0;
   }
 
 }

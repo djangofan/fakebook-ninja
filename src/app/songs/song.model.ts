@@ -10,7 +10,9 @@ export class Song {
   public data: string[][];
   public meta: Meta;
 
-  constructor(owner: string, title: string, composer: string, key: string, data: string[][], meta: Meta) {
+  public published: boolean;
+
+  constructor(owner: string, title: string, composer: string, key: string, data: string[][], meta: Meta, published: boolean = true) {
     this.owner = owner;
     this.title = title;
     this.composer = composer;
@@ -18,6 +20,7 @@ export class Song {
 
     this.data = data;
     this.meta = meta;
+    this.published = published;
   }
 
 }

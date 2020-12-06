@@ -20,7 +20,7 @@ export class DataStorageService {
     this.http
       .put( putUrl, songs )
       .subscribe(response => {
-        console.log('DataStorageService: ', response);
+        //console.log('DataStorageService: ', response);
       });
   }
 
@@ -29,9 +29,9 @@ export class DataStorageService {
     return this.http
       .get<Song[]>( getUrl )
       .pipe(
-        tap(songs => {
-          console.log('songs: ', songs);
-        }),
+        // tap(songs => {
+        //   console.log('songs: ', songs);
+        // }),
         map(songs => {
           return songs.map(song => {
             return {
