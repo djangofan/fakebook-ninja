@@ -57,12 +57,15 @@ export class SongEditComponent implements OnInit, OnDestroy {
 
   private initForm() {
     const currentUser = this.authService.user.value.email;
+    if ( !currentUser.includes('@') ) {
+      alert('Reload this page.  Initial value for owner didn\'t initialize correctly.');
+    }
     if (this.editMode) {
       this.song = this.songsService.getSong(this.id);
     } else {
       const newMeta = new Meta('None', 'AABA', 'lightblue', 'white', 'black', 'black', 'black', 0, 0, 100, 100);
-      const newData = [['x'],['x'],['x'],['x'],['x'],['x'],['x'],['x']];
-      this.song = new Song(currentUser, 'new song', 'new composer', 'key', newData, newMeta, true);
+      const newData = [['x'], ['x'], ['x'], ['x'], ['x'], ['x'], ['x'], ['x']];
+      this.song = new Song(currentUser, 'ZZZ new song', 'new composer', 'C', newData, newMeta, true);
     }
 
     this.songForm = new FormGroup({

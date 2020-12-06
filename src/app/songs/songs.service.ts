@@ -55,8 +55,10 @@ export class SongsService {
     console.log('Updated song.', song);
   }
 
-  private convertFormToSong(rawSong: {owner: string, title: string, composer: string, key: string, data: string, meta: string}): Song {
-    return new Song(rawSong.owner, rawSong.title, rawSong.composer, rawSong.key, JSON.parse(rawSong.data), JSON.parse(rawSong.meta));
+  private convertFormToSong(rawSong: {owner: string, title: string, composer: string,
+    key: string, data: string, meta: string, published: boolean}): Song {
+    return new Song(rawSong.owner, rawSong.title, rawSong.composer,
+      rawSong.key, JSON.parse(rawSong.data), JSON.parse(rawSong.meta), rawSong.published);
   }
 
   deleteSong(index: number) {
