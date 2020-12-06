@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { MeasureComponent } from './song-detail/measure/measure.component';
 import { DemoMaterialModule } from './material-module';
-import { ChordsPipe } from './chords.pipe';
+import { SortAscendingPipe } from './sort-ascending.pipe';
 import { SongPublicComponent } from './song-public/song-public.component';
 
 @NgModule({
@@ -25,7 +25,7 @@ import { SongPublicComponent } from './song-public/song-public.component';
     SongStartComponent,
     SongEditComponent,
     MeasureComponent,
-    ChordsPipe,
+    SortAscendingPipe,
     SongPublicComponent,
   ],
   imports: [

@@ -17,7 +17,7 @@ import { SongsService } from '../songs.service';
     <div class="row">
       <div class="col-md-12">
         <app-song-item
-          *ngFor="let songInstance of songs; let i = index"
+          *ngFor="let songInstance of (songs | sortAscending); let i = index"
           [song]="songInstance"
           [index]="i"></app-song-item>
       </div>
