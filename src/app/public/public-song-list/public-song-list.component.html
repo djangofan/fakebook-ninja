@@ -1,0 +1,10 @@
+<div class="left-margin">
+  <div class="row">
+    <div class="col-md-12 scrollable">
+      <app-public-song-item
+        *ngFor="let songInstance of (songs); let i = index"
+        [song]="songInstance"
+        [index]="i"></app-public-song-item>
+    </div>
+  </div>
+</div>

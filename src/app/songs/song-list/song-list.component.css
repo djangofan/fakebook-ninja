@@ -3,3 +3,7 @@ app-song-item {
   overflow: auto;
 }
 
+.scrollable {
+  overflow-y: scroll;
+  max-height: 600px;
+}

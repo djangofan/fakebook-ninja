@@ -7,16 +7,7 @@ import { SongsService } from 'src/app/songs/songs.service';
 
 @Component({
   selector: 'app-public-song-list',
-  template: `
-    <div class="row">
-      <div class="col-md-12">
-        <app-public-song-item
-          *ngFor="let songInstance of (songs); let i = index"
-          [song]="songInstance"
-          [index]="i"></app-public-song-item>
-      </div>
-    </div>
-  `,
+  templateUrl: './public-song-list.component.html',
   styleUrls: ['public-song-list.component.css']
 })
 export class PublicSongListComponent implements OnInit, OnDestroy {

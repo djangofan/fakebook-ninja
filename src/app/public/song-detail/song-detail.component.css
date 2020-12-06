@@ -24,11 +24,13 @@ h4 { font-size: 14px; }
 .chart {
   margin-bottom: 2em;
   width: 926px;
+  margin-left: 10px;
 }
 
 div.spacer {
   margin-bottom: 2em;
   width:50%;
+  margin-left: 10px;
 }
 
 p {

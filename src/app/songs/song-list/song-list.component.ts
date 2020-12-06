@@ -7,22 +7,7 @@ import { SongsService } from '../songs.service';
 
 @Component({
   selector: 'app-song-list',
-  template: `
-    <div class="row">
-      <div class="col-md-12">
-        <button class="btn btn-success" (click)="onNewSong()">New Song</button>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-md-12">
-        <app-song-item
-          *ngFor="let songInstance of (songs); let i = index"
-          [song]="songInstance"
-          [index]="i"></app-song-item>
-      </div>
-    </div>
-  `,
+  templateUrl: './song-list.component.html',
   styleUrls: ['song-list.component.css']
 })
 export class SongListComponent implements OnInit, OnDestroy {

@@ -41,7 +41,8 @@ export class SongsService {
   addSong(newSong: FormGroup) {
     const song = this.convertFormToSong(newSong.value);
     this.songs.push(song);
-    this.songsChanged.next(this.sortSongs(this.songs));
+    this.songs = this.sortSongs(this.songs);
+    this.songsChanged.next(this.songs);
     this.saveSongsToLocalStorage(this.songs);
     console.log('Added song.', song);
   }
