@@ -1,7 +1,6 @@
 import { Meta } from './../../songs/meta.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Song } from 'src/app/songs/song.model';
 import { SongsService } from 'src/app/songs/songs.service';
 
@@ -16,9 +15,7 @@ export class SongDetailComponent implements OnInit {
   id: number;
 
   constructor(private songsService: SongsService,
-              private route: ActivatedRoute,
-              private router: Router,
-              private authService: AuthService) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -29,15 +26,6 @@ export class SongDetailComponent implements OnInit {
           this.song = this.songsService.getSong(this.id);
         }
       );
-  }
-
-  onEditSong() {
-    this.router.navigate(['edit'], {relativeTo: this.route});
-  }
-
-  onDeleteSong() {
-    this.songsService.deleteSong(this.id);
-    this.router.navigate(['/songs']);
   }
 
   getData(): string[][] {

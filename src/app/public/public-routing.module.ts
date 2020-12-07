@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PublicComponent } from './public.component';
-import { SongStartComponent } from './song-start/song-start.component';
 import { SongDetailComponent } from './song-detail/song-detail.component';
 import { SongResolverService } from '../songs/song-resolver.service';
+import { PublicSongStartComponent } from './public-song-start/public-song-start.component';
 
 const routes: Routes = [
   {
     path: 'public',
     component: PublicComponent,
     children: [
-      { path: '', component: SongStartComponent },
+      { path: '', component: PublicSongStartComponent },
       {
         path: ':id',
         component: SongDetailComponent,

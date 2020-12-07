@@ -5,12 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { PublicComponent } from './public.component';
 import { SongDetailComponent } from './song-detail/song-detail.component';
-import { SongStartComponent } from './song-start/song-start.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { MeasureComponent } from './song-detail/measure/measure.component';
 import { PublicSongListComponent } from './public-song-list/public-song-list.component';
+import { PublicSongStartComponent } from './public-song-start/public-song-start.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { PublicSongListComponent } from './public-song-list/public-song-list.com
     PublicSongListComponent,
     PublicSongItemComponent,
     SongDetailComponent,
-    SongStartComponent,
+    PublicSongStartComponent,
     MeasureComponent
   ],
   imports: [
