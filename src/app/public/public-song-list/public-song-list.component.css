@@ -1,7 +1,6 @@
 
-
 .scrollable {
   overflow-y: scroll;
-  max-height: 1000px;
+  max-height: 75vh;
 }
 
