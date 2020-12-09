@@ -63,9 +63,9 @@ export class SongEditComponent implements OnInit, OnDestroy {
     if (this.editMode) {
       this.song = this.songsService.getSong(this.id);
     } else {
-      const newMeta = new Meta('None', 'AABA', 'lightblue', 'white', 'black', '2px solid black', 'black', 0, 0, 100, 100);
-      const newData = [['x'], ['x'], ['x'], ['x'], ['x'], ['x'], ['x'], ['x']];
-      this.song = new Song(currentUser, 'Song ' + this.id, 'new composer', 'C', newData, newMeta, true);
+      const newMeta = new Meta('None', '-', 'lightblue', 'white', 'black', '2px solid black', 'black', 0, 0, 100, 100);
+      const newData = [['%'], ['%'], ['%'], ['%'], ['%'], ['%'], ['%'], ['%']];
+      this.song = new Song(currentUser, 'New Song', 'new composer', 'C', newData, newMeta, false);
     }
 
     this.songForm = new FormGroup({
@@ -75,7 +75,7 @@ export class SongEditComponent implements OnInit, OnDestroy {
       key: new FormControl(this.song.key, Validators.required),
       data: new FormControl(JSON.stringify(this.song.data), Validators.required),
       meta: new FormControl(JSON.stringify(this.song.meta), Validators.required),
-      published: new FormControl(JSON.stringify(this.song.published), Validators.required)
+      published: new FormControl(this.song.published, Validators.required)
     });
   }
 

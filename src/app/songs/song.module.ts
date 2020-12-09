@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { SongRoutingModule } from './song-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { MeasureComponent } from './song-detail/measure/measure.component';
+import { ResponseComponent } from './song-detail/response/response.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MeasureComponent } from './song-detail/measure/measure.component';
     SongItemComponent,
     SongStartComponent,
     SongEditComponent,
-    MeasureComponent
+    MeasureComponent,
+    ResponseComponent
   ],
   imports: [
     RouterModule,
