@@ -1,6 +1,16 @@
-<i
+<a
   class='fa'
   [class.fa-thumbs-up]='liked'
-  [class.fa-thumbs-down]='!liked'
   (click)='toggle()'
->__</i>
+>
+<!-- from https://material.io/resources/icons/?icon=thumb_up_alt&style=sharp -->
+  <img alt="Like" src="assets/img/thumb_up_alt-24px.svg">
+</a>
+ &nbsp;
+<a
+  class='fa'
+  [class.fa-thumbs-down]='!liked'
+>
+<!-- from https://material.io/resources/icons/?icon=thumb_up_alt&style=sharp -->
+  <img alt="Like" src="assets/img/thumb_down_alt-24px.svg">
+</a>
