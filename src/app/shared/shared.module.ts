@@ -25,6 +25,7 @@ import { AllMaterialModule } from './material-module';
   exports: [
     AlertComponent,
     LoadingSpinnerComponent,
+    HelpComponent,
     PlaceholderDirective,
     DropdownDirective,
     CommonModule,

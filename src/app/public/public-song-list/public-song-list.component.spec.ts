@@ -44,12 +44,4 @@ describe('PublicSongsListComponent', () => {
     });
   });
 
-  describe('onNewSong', () => {
-    it('makes expected calls from navigate', () => {
-      const routerStub: Router = fixture.debugElement.injector.get(Router);
-      spyOn(routerStub, 'navigate').and.callThrough();
-      component.onNewSong();
-      expect(routerStub.navigate).toHaveBeenCalled();
-    });
-  });
 });
